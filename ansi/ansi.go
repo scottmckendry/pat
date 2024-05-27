@@ -53,7 +53,7 @@ func PrintImage(image image.Image, width int, height int) {
 
 			pixels := Pair(image.At(x, y+1), image.At(x, y))
 
-			if pixels == previousPixels {
+			if pixels == previousPixels && x != 0 {
 				print("▄")
 				continue
 			}
