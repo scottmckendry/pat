@@ -2,7 +2,10 @@ package ansi
 
 import (
 	"fmt"
+	"image"
 	"image/color"
+
+	"pat/img"
 )
 
 // PixelPair represents a pair of pixels, one for the top half of a character and one for the bottom half.
@@ -35,4 +38,29 @@ func Pair(topPixel color.Color, bottomPixel color.Color) PixelPair {
 // Returns the ANSI escape code to reset the terminal colors.
 func Reset() string {
 	return "\033[0m"
+}
+
+func PrintPixels(pixels PixelPair) {
+	fmt.Print(ConvertPixels(pixels))
+}
+
+func PrintImage(image image.Image, width int, height int) {
+	image = img.Resize(image, width, height)
+
+	previousPixels := PixelPair{}
+	for y := 0; y < image.Bounds().Dy(); y += 2 {
+		for x := 0; x < image.Bounds().Dx(); x++ {
+
+			pixels := Pair(image.At(x, y+1), image.At(x, y))
+
+			if pixels == previousPixels {
+				print("▄")
+				continue
+			}
+
+			PrintPixels(pixels)
+			previousPixels = pixels
+		}
+		fmt.Println(Reset())
+	}
 }
