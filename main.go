@@ -2,15 +2,23 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"pat/ansi"
 	"pat/img"
 )
 
 func main() {
-	image, err := img.Decode("./img/test_img.png")
+	path := os.Args[1]
+	if !pathExists(path) {
+		fmt.Println("Could not find file:", path)
+		os.Exit(1)
+	}
+
+	image, err := img.Decode(path)
 	if err != nil {
-		panic(err)
+		fmt.Println("Could not decode image:", err)
+		os.Exit(1)
 	}
 
 	image = img.Resize(image, 80, 0)
@@ -31,4 +39,9 @@ func main() {
 		}
 		fmt.Println(ansi.Reset())
 	}
+}
+
+func pathExists(path string) bool {
+	_, err := os.Stat(path)
+	return !os.IsNotExist(err)
 }
