@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"os"
 
@@ -9,6 +10,25 @@ import (
 )
 
 func main() {
+	flag.Usage = func() {
+		fmt.Print("Usage: pat <path-to-image> [options]\n\n")
+		fmt.Println("Options:")
+		flag.PrintDefaults()
+	}
+
+	width := flag.Int("w", 100, "Number of columns to use for the image\n  ")
+	height := flag.Int(
+		"h",
+		0,
+		"Number of rows to use for the image. Using 0 in either width or height will\n"+"preserve the aspect ratio of the image.\n   (default 0)",
+	)
+	flag.Parse()
+
+	if len(os.Args) < 2 {
+		flag.Usage()
+		os.Exit(1)
+	}
+
 	path := os.Args[1]
 	if !pathExists(path) {
 		fmt.Println("Could not find file:", path)
@@ -21,7 +41,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	ansi.PrintImage(image, 10, 0)
+	ansi.PrintImage(image, *width, *height)
 }
 
 func pathExists(path string) bool {
