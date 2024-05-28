@@ -66,10 +66,8 @@ func TestPrintImage(t *testing.T) {
 		t.Fatalf("Could not read from testdata file: %v", err)
 	}
 
-	// convert line endings if on windows
-	if os.PathSeparator == '\\' {
-		want = bytes.ReplaceAll(want, []byte("\r\n"), []byte("\n"))
-	}
+	// remove windows line endings if present
+	want = bytes.ReplaceAll(want, []byte("\r\n"), []byte("\n"))
 
 	// keep a backup of the real stdout, and replace it with a pipe.
 	old := os.Stdout
