@@ -1,0 +1,47 @@
+name: CI
+on:
+    push:
+
+jobs:
+    test:
+        name: Test
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Setup Go
+              uses: actions/setup-go@v5
+              with:
+                  go-version: 1.22
+            - name: Test
+              run: go run gotest.tools/gotestsum@latest --junitfile unit-tests.xml --format pkgname
+
+            - name: Test Summary
+              uses: test-summary/action@v2
+              with:
+                  paths: "unit-tests.xml"
+              if: always()
+    lint:
+        name: Lint
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Setup Go
+              uses: actions/setup-go@v5
+              with:
+                  go-version: 1.22
+            - name: golangci-lint
+              uses: golangci/golangci-lint-action@v6
+              with:
+                  version: v1.58
+    release:
+        name: Release
+        runs-on: ubuntu-latest
+        needs: [test, lint]
+        if: github.ref == 'refs/heads/main'
+        steps:
+            - uses: google-github-actions/release-please-action@v4
+              with:
+                  token: ${{ secrets.REPO_TOKEN }}
+                  release-type: go
