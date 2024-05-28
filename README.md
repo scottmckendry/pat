@@ -4,6 +4,8 @@ _Like c**at** but for **p**ictures._
 
 Display images in the terminal without relying on special protocols or custom fonts. Works on any terminal where [true color is supported](https://github.com/termstandard/colors) (most of them).
 
+![image](https://github.com/scottmckendry/pat/assets/39483124/4315c4a2-6915-4ed4-813b-72a49b24a725)
+
 ## 📦 Installation
 
 TODO ✅
