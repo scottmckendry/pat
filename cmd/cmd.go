@@ -12,8 +12,11 @@ import (
 
 var cmd = &cobra.Command{
 	Use:   "pat <path-to-image>",
-	Short: "A brief description of your application",
-	Long:  `A longer description that spans multiple lines and likely contains`,
+	Short: "like cat, but for pictures",
+	Long: `Pat is a tool for displaying images in the terminal.
+        It works by converting images to ANSI escape codes that render
+        the image in the terminal two pixels at a time (since terminal
+        characters are twice as tall as they are wide).`,
 
 	Args: cobra.ExactArgs(1),
 
