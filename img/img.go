@@ -2,11 +2,15 @@ package img
 
 import (
 	"image"
+	_ "image/gif"
 	_ "image/jpeg"
 	_ "image/png"
 	"os"
 
 	"github.com/nfnt/resize"
+	_ "golang.org/x/image/bmp"
+	_ "golang.org/x/image/tiff"
+	_ "golang.org/x/image/webp"
 )
 
 // Decode reads an image from a file and returns the image.Image.
