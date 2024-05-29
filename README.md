@@ -8,7 +8,11 @@ Display images in the terminal without relying on special protocols or custom fo
 
 ## 📦 Installation
 
-TODO ✅
+**Go**
+
+```sh
+go install github.com/scottmckendry/pat@latest
+```
 
 ## 🚀 Usage
 
