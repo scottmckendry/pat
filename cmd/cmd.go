@@ -6,8 +6,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"pat/ansi"
-	"pat/img"
+	"github.com/scottmckendry/pat/ansi"
+	"github.com/scottmckendry/pat/img"
 )
 
 var cmd = &cobra.Command{

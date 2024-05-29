@@ -5,7 +5,7 @@ import (
 	"image"
 	"image/color"
 
-	"pat/img"
+	"github.com/scottmckendry/pat/img"
 )
 
 // PixelPair represents a pair of pixels, one for the top half of a character and one for the bottom half.

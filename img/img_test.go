@@ -3,7 +3,7 @@ package img_test
 import (
 	"testing"
 
-	"pat/img"
+	"github.com/scottmckendry/pat/img"
 )
 
 func TestDecode(t *testing.T) {

@@ -6,8 +6,8 @@ import (
 	"os"
 	"testing"
 
-	"pat/ansi"
-	"pat/img"
+	"github.com/scottmckendry/pat/ansi"
+	"github.com/scottmckendry/pat/img"
 )
 
 func TestPair(t *testing.T) {

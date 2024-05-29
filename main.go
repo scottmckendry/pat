@@ -1,7 +1,7 @@
 package main
 
 import (
-	"pat/cmd"
+	"github.com/scottmckendry/pat/cmd"
 )
 
 func main() {

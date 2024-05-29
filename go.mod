@@ -1,4 +1,4 @@
-module pat
+module github.com/scottmckendry/pat
 
 go 1.22.3
 
