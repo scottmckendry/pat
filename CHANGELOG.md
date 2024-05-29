@@ -1,0 +1,21 @@
+# Changelog
+
+## 0.1.0 (2024-05-29)
+
+
+### Features
+
+* add flags and help text ([e0b8842](https://github.com/scottmckendry/pat/commit/e0b8842eed75981921f7c7212bcf2255c8a13347))
+* add support for transparent images ([26a0e23](https://github.com/scottmckendry/pat/commit/26a0e23fef86f6eab52dd520ab3cd0f74a3cda88))
+* **ci:** add go releaser ([7b34bdd](https://github.com/scottmckendry/pat/commit/7b34bdd2b46aa0519ce019bc41cb06cac994d66f))
+* **ci:** add test, lint and release please jobs ([#1](https://github.com/scottmckendry/pat/issues/1)) ([2775c83](https://github.com/scottmckendry/pat/commit/2775c83cdfc89c769b5f0d4e342ecfee44c52d60))
+* poc - image printing to conosole :tada: ([90ac7e3](https://github.com/scottmckendry/pat/commit/90ac7e33446c3b7b6a7dbfaac43e48a84bb76c9f))
+* replace flag package with cobra ([2075cf0](https://github.com/scottmckendry/pat/commit/2075cf0a72ca9802932e353a2e713d7499cf1467))
+* replace hard coded path with argument ([750def5](https://github.com/scottmckendry/pat/commit/750def5cef392e7ef3435d34ff38438076db0bd9))
+
+
+### Bug Fixes
+
+* render bug introduces by resets on new lines ([1913f6d](https://github.com/scottmckendry/pat/commit/1913f6df59cfae0e2274a71532e88e9fe61c9a78))
+* row of black pixels when total rows after resize is odd ([8d5ff5e](https://github.com/scottmckendry/pat/commit/8d5ff5efc39f20f49e4515ec581f83d3d9c3978a))
+* **test:** replace line endings regardless of OS ([c554dca](https://github.com/scottmckendry/pat/commit/c554dca071814f2b1095082e9fe6d712763181f3))
