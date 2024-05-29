@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/scottmckendry/pat/compare/v0.1.0...v0.1.1) (2024-05-29)
+
+
+### Bug Fixes
+
+* **ci:** version warning for goreleaser ([32524c4](https://github.com/scottmckendry/pat/commit/32524c48639c3000519227318733bb98a384be49))
+
 ## 0.1.0 (2024-05-29)
 
 
