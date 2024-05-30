@@ -1,8 +1,6 @@
 package cmd
 
 import (
-	"fmt"
-	"image"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -23,22 +21,8 @@ var cmd = &cobra.Command{
 
 	Run: func(cmd *cobra.Command, args []string) {
 		path := args[0]
-		url := img.IsUrl(path)
-
-		if !url && !PathExists(path) {
-			cobra.CheckErr(fmt.Errorf("could not find file: %s", path))
-		}
-
-		image := image.Image(nil)
-		err := error(nil)
-		if !url {
-			image, err = img.Decode(path)
-		} else {
-			image, err = img.DecodeFromUrl(path)
-		}
-		if err != nil {
-			cobra.CheckErr(err)
-		}
+		iamge, err := img.Decode(path)
+		cobra.CheckErr(err)
 
 		columns, _ := cmd.Flags().GetInt("columns")
 		rows, _ := cmd.Flags().GetInt("rows")
@@ -48,7 +32,7 @@ var cmd = &cobra.Command{
 			columns = 0
 		}
 
-		ansi.PrintImage(image, columns, rows)
+		ansi.PrintImage(iamge, columns, rows)
 	},
 }
 
@@ -62,9 +46,4 @@ func Execute() {
 func init() {
 	cmd.Flags().IntP("columns", "c", 100, "Number of columns to use for the image")
 	cmd.Flags().IntP("rows", "r", 0, "Number of rows to use for the image")
-}
-
-func PathExists(path string) bool {
-	_, err := os.Stat(path)
-	return !os.IsNotExist(err)
 }

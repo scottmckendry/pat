@@ -17,18 +17,15 @@ import (
 // Decode reads an image from a file and returns the image.Image.
 // If the file cannot be read, an error is returned.
 func Decode(filepath string) (image.Image, error) {
-	file, err := os.Open(filepath)
-	if err != nil {
-		return nil, err
-	}
-	defer file.Close()
-
-	img, _, err := image.Decode(file)
-	if err != nil {
-		return nil, err
+	if isUrl(filepath) {
+		return decodeFromUrl(filepath)
 	}
 
-	return img, nil
+	if !pathExists(filepath) {
+		return nil, os.ErrNotExist
+	}
+
+	return decodeFromFile(filepath)
 }
 
 // Resizes an image to the specified width and height.
@@ -51,7 +48,8 @@ func Resize(image image.Image, width, height int) image.Image {
 	return image
 }
 
-func DecodeFromUrl(url string) (image.Image, error) {
+// execute a GET request to the provided URL and decode the image
+func decodeFromUrl(url string) (image.Image, error) {
 	resp, err := http.Get(url)
 	if err != nil {
 		return nil, err
@@ -66,6 +64,29 @@ func DecodeFromUrl(url string) (image.Image, error) {
 	return img, nil
 }
 
-func IsUrl(path string) bool {
+// open a file and decode the image
+func decodeFromFile(filepath string) (image.Image, error) {
+	file, err := os.Open(filepath)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	img, _, err := image.Decode(file)
+	if err != nil {
+		return nil, err
+	}
+
+	return img, nil
+}
+
+// check if the path is a URL
+func isUrl(path string) bool {
 	return path[:4] == "http"
+}
+
+// check if a file exists at the provided path
+func pathExists(path string) bool {
+	_, err := os.Stat(path)
+	return !os.IsNotExist(err)
 }
