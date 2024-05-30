@@ -16,8 +16,16 @@ go install github.com/scottmckendry/pat@latest
 
 ## 🚀 Usage
 
+Pat accepts a single argument, the path to the image you want to display. For example:
+
 ```sh
 pat image.jpg
+```
+
+This can be substituted with a URL:
+
+```sh
+pat https://example.com/image.jpg
 ```
 
 For more options, run `pat --help`.

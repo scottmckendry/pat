@@ -10,7 +10,7 @@ import (
 )
 
 var cmd = &cobra.Command{
-	Use:   "pat <path-to-image>",
+	Use:   "pat <path-to-image OR url>",
 	Short: "like cat, but for pictures",
 	Long: `Pat is a tool for displaying images in the terminal.
         It works by converting images to ANSI escape codes that render
