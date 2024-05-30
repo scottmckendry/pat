@@ -5,6 +5,7 @@ import (
 	_ "image/gif"
 	_ "image/jpeg"
 	_ "image/png"
+	"net/http"
 	"os"
 
 	"github.com/nfnt/resize"
@@ -48,4 +49,23 @@ func Resize(image image.Image, width, height int) image.Image {
 	}
 
 	return image
+}
+
+func DecodeFromUrl(url string) (image.Image, error) {
+	resp, err := http.Get(url)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	img, _, err := image.Decode(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+
+	return img, nil
+}
+
+func IsUrl(path string) bool {
+	return path[:4] == "http"
 }

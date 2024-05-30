@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"image"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -22,12 +23,22 @@ var cmd = &cobra.Command{
 
 	Run: func(cmd *cobra.Command, args []string) {
 		path := args[0]
-		if !PathExists(path) {
+		url := img.IsUrl(path)
+
+		if !url && !PathExists(path) {
 			cobra.CheckErr(fmt.Errorf("could not find file: %s", path))
 		}
 
-		image, err := img.Decode(path)
-		cobra.CheckErr(err)
+		image := image.Image(nil)
+		err := error(nil)
+		if !url {
+			image, err = img.Decode(path)
+		} else {
+			image, err = img.DecodeFromUrl(path)
+		}
+		if err != nil {
+			cobra.CheckErr(err)
+		}
 
 		columns, _ := cmd.Flags().GetInt("columns")
 		rows, _ := cmd.Flags().GetInt("rows")
