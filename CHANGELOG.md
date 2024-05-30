@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.0](https://github.com/scottmckendry/pat/compare/v0.1.1...v0.2.0) (2024-05-30)
+
+
+### Features
+
+* add decoders to support more input formats ([e009232](https://github.com/scottmckendry/pat/commit/e009232628f6a2c87d6cb3c17d8fc644425e8cb0))
+* add support for urls ([67d183e](https://github.com/scottmckendry/pat/commit/67d183eebfd180a569372439543ee584157d86da))
+
 ## [0.1.1](https://github.com/scottmckendry/pat/compare/v0.1.0...v0.1.1) (2024-05-29)
 
 
