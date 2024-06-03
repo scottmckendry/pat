@@ -14,6 +14,12 @@ Display images in the terminal without relying on special protocols or custom fo
 go install github.com/scottmckendry/pat@latest
 ```
 
+**Windows**
+
+```sh
+winget install scottmckendry.pat
+```
+
 ## 🚀 Usage
 
 Pat accepts a single argument, the path to the image you want to display. For example:
