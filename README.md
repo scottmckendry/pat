@@ -20,6 +20,28 @@ go install github.com/scottmckendry/pat@latest
 winget install scottmckendry.pat
 ```
 
+**Nix**
+
+Add to your flake inputs:
+
+```nix
+{
+  inputs.pat.url = "github:scottmckendry/pat";
+}
+```
+
+Then you can use it in your configuration:
+
+```nix
+{
+  # For NixOS system configuration
+  environment.systemPackages = [ inputs.pat.packages.${system}.default ];
+
+  # Or for home-manager
+  home.packages = [ inputs.pat.packages.${system}.default ];
+}
+```
+
 ## 🚀 Usage
 
 Pat accepts a single argument, the path to the image you want to display. For example:
