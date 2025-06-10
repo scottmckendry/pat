@@ -26,6 +26,12 @@ var cmd = &cobra.Command{
 			os.Exit(0)
 		}
 
+		if len(args) != 1 {
+			// if no arguments are provided, print the usage
+			cmd.Usage()
+			os.Exit(0)
+		}
+
 		path := args[0]
 		iamge, err := img.Decode(path)
 		cobra.CheckErr(err)
