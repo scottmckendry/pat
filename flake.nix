@@ -12,7 +12,7 @@
     {
       packages.${system}.default = pkgs.buildGoModule {
         pname = "pat";
-        version = "0.2.0";
+        version = "0.2.0"; # x-release-please-version
         src = ./.;
         vendorHash = "sha256-t+t0e9mqC3NV3kN9o7Vg5zggso+y862Xztv574yxroU=";
         goPackagePath = "github.com/scottmckendry/pat";

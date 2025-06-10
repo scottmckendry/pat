@@ -9,6 +9,8 @@ import (
 	"github.com/scottmckendry/pat/img"
 )
 
+const VERSION = "0.2.0" // x-release-please-version
+
 var cmd = &cobra.Command{
 	Use:   "pat <path-to-image OR url>",
 	Short: "like cat, but for pictures",
@@ -17,9 +19,13 @@ var cmd = &cobra.Command{
         the image in the terminal two pixels at a time (since terminal
         characters are twice as tall as they are wide).`,
 
-	Args: cobra.ExactArgs(1),
-
 	Run: func(cmd *cobra.Command, args []string) {
+		version, _ := cmd.Flags().GetBool("version")
+		if version {
+			cmd.Printf("pat v%s\n", VERSION)
+			os.Exit(0)
+		}
+
 		path := args[0]
 		iamge, err := img.Decode(path)
 		cobra.CheckErr(err)
@@ -46,4 +52,5 @@ func Execute() {
 func init() {
 	cmd.Flags().IntP("columns", "c", 100, "Number of columns to use for the image")
 	cmd.Flags().IntP("rows", "r", 0, "Number of rows to use for the image")
+	cmd.Flags().BoolP("version", "v", false, "Display the version of pat and exit")
 }
