@@ -34,11 +34,21 @@ Then you can use it in your configuration:
 
 ```nix
 {
-  # For NixOS system configuration
-  environment.systemPackages = [ inputs.pat.packages.${system}.default ];
+  inputs,
+  pkgs,
+  ...
+}:
 
-  # Or for home-manager
-  home.packages = [ inputs.pat.packages.${system}.default ];
+{
+  # Install as a system package
+  environment.systemPackages = [
+    inputs.pat.packages.${pkgs.system}.default
+  ];
+
+  # OR with home-manager
+  home.packages = [
+    inputs.pat.packages.${pkgs.system}.default
+  ];
 }
 ```
 
