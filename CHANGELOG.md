@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0](https://github.com/scottmckendry/pat/compare/v0.2.0...v0.3.0) (2025-06-10)
+
+
+### Features
+
+* add version flag support ([b380850](https://github.com/scottmckendry/pat/commit/b380850c23dad9c7665173e6d251db0655ff3737))
+* **build:** add nix flake ([6037754](https://github.com/scottmckendry/pat/commit/6037754a798b3080d21949d696c7908128d0510e))
+
 ## [0.2.0](https://github.com/scottmckendry/pat/compare/v0.1.1...v0.2.0) (2024-05-30)
 
 
