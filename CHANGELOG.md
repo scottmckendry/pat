@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1](https://github.com/scottmckendry/pat/compare/v0.3.0...v0.3.1) (2025-06-10)
+
+
+### Bug Fixes
+
+* unhelpful error when no args are passed ([c967e02](https://github.com/scottmckendry/pat/commit/c967e02abaee66f8064357e62f0763a5cb2cba62))
+
 ## [0.3.0](https://github.com/scottmckendry/pat/compare/v0.2.0...v0.3.0) (2025-06-10)
 
 
