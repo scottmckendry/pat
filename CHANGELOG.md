@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.2](https://github.com/scottmckendry/pat/compare/v0.3.1...v0.3.2) (2025-06-19)
+
+
+### Bug Fixes
+
+* **nix:** always fetch release version ([63ab860](https://github.com/scottmckendry/pat/commit/63ab860efeb5fc67d9cd3e69d70cd592b1fd7912))
+
 ## [0.3.1](https://github.com/scottmckendry/pat/compare/v0.3.0...v0.3.1) (2025-06-10)
 
 
