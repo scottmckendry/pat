@@ -17,7 +17,7 @@
           owner = "scottmckendry";
           repo = "pat";
           rev = "v0.3.3"; # x-release-please-version
-          sha256 = "sha256-oFnTFsYEn/Mn10FJUbXH0l+qYcvyVBMXmlT5bF6GUv8";
+          sha256 = "sha256-AfRA2XlDy+metUaDGJW2cIqhWLPUvUQfJRy193vdz2w";
         };
         vendorHash = "sha256-t+t0e9mqC3NV3kN9o7Vg5zggso+y862Xztv574yxroU";
         goPackagePath = "github.com/scottmckendry/pat";
