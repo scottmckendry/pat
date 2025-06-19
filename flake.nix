@@ -12,11 +12,11 @@
     {
       packages.${system}.default = pkgs.buildGoModule {
         pname = "pat";
-        version = "0.3.2"; # x-release-please-version
+        version = "0.3.3"; # x-release-please-version
         src = pkgs.fetchFromGitHub {
           owner = "scottmckendry";
           repo = "pat";
-          rev = "v0.3.2"; # x-release-please-version
+          rev = "v0.3.3"; # x-release-please-version
           sha256 = "sha256-oFnTFsYEn/Mn10FJUbXH0l+qYcvyVBMXmlT5bF6GUv8";
         };
         vendorHash = "sha256-t+t0e9mqC3NV3kN9o7Vg5zggso+y862Xztv574yxroU";
