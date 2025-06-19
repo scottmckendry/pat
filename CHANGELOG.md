@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.3](https://github.com/scottmckendry/pat/compare/v0.3.2...v0.3.3) (2025-06-19)
+
+
+### Bug Fixes
+
+* **ci:** bump goreleaser to v2 ([02369c9](https://github.com/scottmckendry/pat/commit/02369c95dcf713dbbeb2edd1473da702668fd2ea))
+
 ## [0.3.2](https://github.com/scottmckendry/pat/compare/v0.3.1...v0.3.2) (2025-06-19)
 
 
