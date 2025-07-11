@@ -9,7 +9,7 @@ import (
 	"github.com/scottmckendry/pat/img"
 )
 
-const VERSION = "0.3.3" // x-release-please-version
+const VERSION = "0.4.0" // x-release-please-version
 
 var cmd = &cobra.Command{
 	Use:   "pat <path-to-image OR url>",
