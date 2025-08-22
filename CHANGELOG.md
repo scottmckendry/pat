@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0](https://github.com/scottmckendry/pat/compare/v0.3.3...v0.4.0) (2025-08-22)
+
+
+### Features
+
+* **deps:** update module golang.org/x/image ( v0.28.0 → v0.29.0 ) ([07430dc](https://github.com/scottmckendry/pat/commit/07430dc9b9cd4585bb059160a76909d3e610d758))
+* **deps:** update module golang.org/x/image ( v0.29.0 → v0.30.0 ) ([ad7416a](https://github.com/scottmckendry/pat/commit/ad7416a7929218caf7ac497d2288e2292b4f08a4))
+
 ## [0.3.3](https://github.com/scottmckendry/pat/compare/v0.3.2...v0.3.3) (2025-06-19)
 
 
