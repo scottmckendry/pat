@@ -4,7 +4,7 @@ go 1.24
 
 require (
 	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646
-	github.com/spf13/cobra v1.10.1
+	github.com/spf13/cobra v1.10.2
 	golang.org/x/image v0.30.0
 )
 
